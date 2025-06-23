@@ -25,3 +25,12 @@ class VoiceFriend(ABC):
     def _setup_voice(self):
         '''Set the voice properties (to be implemented by subclasses)'''
         pass
+
+    @property
+    def moood(self, value):
+        '''Set the mood with validation.'''
+        valid_moods = ["happy", "sad", "excited", "angry", "neutral"]
+        if value.lower() in valid_moods:
+            self._mood = value.lower()
+        else:
+            self.log(f"Invalid mood. Keep current mood: {self._mood}")
