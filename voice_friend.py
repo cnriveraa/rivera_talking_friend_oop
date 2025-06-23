@@ -98,3 +98,8 @@ class VoiceFriend(ABC):
         if old_mood != self._mood:
             self.say(f"My mood has changed from {old_mood} to {self._mood}.")
             self.express_feeling()
+
+    @abstractmethod
+    def special_ability(self):
+        '''Special ability to each voice type.'''
+        pass
