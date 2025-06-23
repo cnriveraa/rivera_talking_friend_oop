@@ -79,3 +79,14 @@ class VoiceFriend(ABC):
         joke = random.choice(jokes)
         self.say(joke)
         self.say("HAHAHAHA! That was funny, right? I know, I know, I'm hilarious!")
+
+    def express_feeling(self):
+        '''Express current feeling.'''
+        feelings = {
+            "happy": "I'm feeling on top of the world! Everything is just perfect!",
+            "sad": "I'm feeling a bit at the moment. I could use a hug.",
+            "excited": "I CAN'T CONTAIN MY EXCITEMENT! EVERYTHING IS THRILLING!",
+            "angry": "I'm really annoyed right now. Leave me alone.",
+            "neutral": "I'm feeling pretty normal. Just another day."
+        }
+        self.say(feelings.get(self._mood, "I'm not sure how I feel right now."))
