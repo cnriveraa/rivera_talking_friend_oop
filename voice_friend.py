@@ -15,3 +15,8 @@ class VoiceFriend(ABC):
         self._running = True
         self._message_queue = []
         self._speech_thread = None
+
+    def log(self, message):
+        '''Add message to the text widget.'''
+        self.text_widget.insert(tk.END, f"{message}\n")
+        self.text_widget.see(tk.END)
