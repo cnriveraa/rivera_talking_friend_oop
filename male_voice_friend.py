@@ -27,3 +27,22 @@ class MaleVoiceFriend(VoiceFriend):
         self.engine.setProperty('rate', 50)  # Slower rate for deep voice effect
         self.say("BOOM! Did you feel that? I can make the ground tremble with my voice!")
         self.engine.setProperty('rate', original_rate)
+
+    def tell_joke(self):
+        '''Override with more masculine humor.'''
+        jokes = [
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "How do you organize a space party? You planet!",
+            "I'm on a seafood diet. Every time I see food, I eat it!",
+            "They said real men don't cry — try steppin on a LEGO.",
+            "I don't chase girls. I chase unli-rice.",
+            "Real men cook, especially when mom isn't home.",
+            "I don't need six-pack abs... I just have a six-pack jokes.",
+            "I go to the gym... to take mirror selfies.",
+            "I can lift heavy things... espcially my food to my mouth.",
+            "Gym is life — until cheat day turns into cheat week!",
+            "I walk like a boss... especially when I see my crush passing by."
+        ]
+        joke = random.choice(jokes)
+        self.say(joke)
+        self.say("HAHAHA! That was a good one, right? I know! I'm really funny!")
