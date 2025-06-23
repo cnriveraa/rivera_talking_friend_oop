@@ -20,3 +20,8 @@ class VoiceFriend(ABC):
         '''Add message to the text widget.'''
         self.text_widget.insert(tk.END, f"{message}\n")
         self.text_widget.see(tk.END)
+
+    @abstractmethod
+    def _setup_voice(self):
+        '''Set the voice properties (to be implemented by subclasses)'''
+        pass
