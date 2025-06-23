@@ -60,3 +60,22 @@ class VoiceFriend(ABC):
             "neutral": f"Hello, I'm {self.name}."
         }
         self.say(greetings.get(self._mood, greetings["neutral"]))
+
+    def tell_joke(self):
+        '''Tell random joke.'''
+        jokes = [
+            "Why don't the skeleton fight each other? It's because they don't have the guts!",
+            "I'm reading a book about anti-gravity. It's impossible to put down!",
+            "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Why don't scientists trust atoms? Because they make up everything!"
+            "I used to be a baker, but I couldn't make enough dough.",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "What do you call fake spaghetti? An impasta!",
+            "Why did the computer go to the doctor? Because it had a virus!",
+            "My wallet is like an onion. I cry every time I open it because it's empty!"
+            "I told my mom I'm sick. She gave me medicine, water, Vicks, and said 'Kakaselpon mo yan.'"
+        ]
+        joke = random.choice(jokes)
+        self.say(joke)
+        self.say("HAHAHAHA! That was funny, right? I know, I know, I'm hilarious!")
