@@ -49,3 +49,14 @@ class VoiceFriend(ABC):
             text = self._message_queue.pop(0)
             self.engine.say(text)
             self.engine.runAndWait()
+
+    def greet(self):
+        '''Greet the user based on mood.'''
+        greetings = {
+            "happy": f"Hello there! I'm {self.name} and I'm feeling great today!",
+            "sad": f"Hi... I'm {self.name}. Not feeling my best...",
+            "excited": f"OH MY GOSH HI!!! I'm {self.name} and I'M SO EXCITED TO TALK TO YOUUU!!!",
+            "angry": f"I'm {self.name}. What do you want?",
+            "neutral": f"Hello, I'm {self.name}."
+        }
+        self.say(greetings.get(self._mood, greetings["neutral"]))
