@@ -103,3 +103,9 @@ class VoiceFriend(ABC):
     def special_ability(self):
         '''Special ability to each voice type.'''
         pass
+
+    def stop(self):
+        '''Clean up resources.'''
+        self._running = False
+        if self.speech_thread and self.speech_thread.is_alive():
+            self.speech_thread.join() 
