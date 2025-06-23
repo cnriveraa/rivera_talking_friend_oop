@@ -34,3 +34,11 @@ class VoiceFriend(ABC):
             self._mood = value.lower()
         else:
             self.log(f"Invalid mood. Keep current mood: {self._mood}")
+
+    def say(self, text):
+        '''Add speech to queue.'''
+        self.message_queue.append(text)
+        self.log(f"{self.name}: {text}")
+        if not self._speech_thread or not self._speech_thread.is_alive():
+            self._speech_thread = threading.Thread(target=self._process_speech_queue)
+            self._speech_thread.start()
