@@ -90,3 +90,11 @@ class VoiceFriend(ABC):
             "neutral": "I'm feeling pretty normal. Just another day."
         }
         self.say(feelings.get(self._mood, "I'm not sure how I feel right now."))
+
+    def change_mood(self, new_mood):
+        '''Change mood.'''
+        old_mood = self._mood
+        self.mood = new_mood
+        if old_mood != self._mood:
+            self.say(f"My mood has changed from {old_mood} to {self._mood}.")
+            self.express_feeling()
