@@ -28,7 +28,7 @@ class TalkingFriendApp:
         self.setup_chat()
 
     def setup_control(self):
-        '''Setup control displays'''
+        '''Setup control widgets'''
 
         # Name entry
         ttk.Label(self.control_frame, text="Friend's Name:").grid(row=0, column=0, sticky=tk.w)
