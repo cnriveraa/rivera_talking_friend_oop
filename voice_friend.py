@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import tkinter as tk
 import pyttsx3
 import random
 import threading
