@@ -130,3 +130,8 @@ class TalkingFriendApp:
         '''Handle tell joke action'''
         if self.friend:
             self.do_tell_joke()
+
+    def do_express_mood(self):
+        '''Handle express mood action'''
+        if self.friend:
+            self.do_express_mood()
