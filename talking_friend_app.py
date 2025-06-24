@@ -56,3 +56,6 @@ class TalkingFriendApp:
         # Action Buttons (disabled initially)
         self.action_frame = ttk.Frame(self.control_frame)
         self.action_frame.grid(row=3, column=0, columnspan=3, pady=(10, 0), sticky=tk.w)
+
+        self.greet_button = ttk.Button(self.action_frame, text="Greet", command=self.do_greet, state=tk.DISABLED)
+        self.greet_button.grid(side=tk.LEFT, padx=2)
