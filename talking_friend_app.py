@@ -112,3 +112,11 @@ class TalkingFriendApp:
         self.mood_button.config(state=tk.NORMAL)
         self.special_ability_button.config(state=tk.NORMAL)
         self.change_button.config(state=tk.NORMAL)
+
+        # Clear chat
+        self.chat_text.configure(state='normal')
+        self.chat_text.delete(1.0, tk.END)
+        self.chat_text.configure(state='disabled')
+
+        # Initial greeting
+        self.friend.greet()
