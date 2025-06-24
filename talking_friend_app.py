@@ -41,3 +41,10 @@ class TalkingFriendApp:
         self.voice_type = tk.StringVar(value="male")
         ttk.Radiobutton(self.control_frame, text="Male", variable=self.voice_type, value="male").grid(row=1, column=1, sticky=tk.w)
         ttk.Radiobutton(self.control_frame, text="Female", variable=self.voice_type, value="female").grid(row=1, column=1, sticky=tk.w)
+
+        # Mood Selection
+        ttk.Label(self.control_frame, text="Initial Mood:").grid(row=2, column=0, sticky=tk.w)
+        self.mood_var = tk.StringVar(value='neutral')
+        moods = ["happy", "sad", "excited", "angry", "neutral"]
+        self.mood_menu = ttk.Combobox(self.control_frame, textvariable=self.mood_var, values=moods, state="readonly", width=10)
+        self.mood_menu.grid(row=2, column=1, sticky=tk.w)
