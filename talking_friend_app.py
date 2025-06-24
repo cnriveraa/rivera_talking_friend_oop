@@ -26,3 +26,18 @@ class TalkingFriendApp:
 
         # Chat display
         self.setup_chat()
+
+    def setup_control(self):
+        '''Setup control displays'''
+
+        # Name entry
+        ttk.Label(self.control_frame, text="Friend's Name:").grid(row=0, column=0, sticky=tk.w)
+        self.name_entry = ttk.Entry(self.control_frame, width=20)
+        self.name_entry.grid(row=0, column=1, sticky=tk.w)
+        self.name_entry.insert(0, " ")
+
+        # Voice type selection
+        ttk.Label(self.control_frame, text="Voice Type:").grid(row=1, column=0, sticky=tk.w)
+        self.voice_type = tk.StringVar(value="male")
+        ttk.Radiobutton(self.control_frame, text="Male", variable=self.voice_type, value="male").grid(row=1, column=1, sticky=tk.w)
+        ttk.Radiobutton(self.control_frame, text="Female", variable=self.voice_type, value="female").grid(row=1, column=1, sticky=tk.w)
