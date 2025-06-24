@@ -125,3 +125,8 @@ class TalkingFriendApp:
         '''Handle greet action'''
         if self.friend:
             self.friend.greet()
+
+    def do_tell_joke(self):
+        '''Handle tell joke action'''
+        if self.friend:
+            self.do_tell_joke()
