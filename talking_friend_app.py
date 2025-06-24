@@ -120,3 +120,8 @@ class TalkingFriendApp:
 
         # Initial greeting
         self.friend.greet()
+
+    def do_greet(self):
+        '''Handle greet action'''
+        if self.friend:
+            self.friend.greet()
