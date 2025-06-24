@@ -52,3 +52,7 @@ class TalkingFriendApp:
         # Create button
         self.create_button = ttk.Button(self.control_frame, text="Create Friend", command=self.create_friend)
         self.create_button.grid(row=2, column=2, padx=5)
+
+        # Action Buttons (disabled initially)
+        self.action_frame = ttk.Frame(self.control_frame)
+        self.action_frame.grid(row=3, column=0, columnspan=3, pady=(10, 0), sticky=tk.w)
