@@ -77,3 +77,9 @@ class TalkingFriendApp:
         self.new_mood_var = tk.StringVar()
         self.new_mood_menu = ttk.Combobox(self.change_mood_frame, textvariable=self.new_mood_var, values=moods, state="readonly", width=10)
         self.new_mood_menu.pack(side=tk.LEFT)
+
+    def setup_chat(self):
+        '''Setup chat display'''
+        self.chat_text = scrolledtext.ScrolledText(self.chat_frame, wrap=tk.WORD, width=60, height=20)
+        self.chat_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        self.chat_text.configure(state='disabled')
