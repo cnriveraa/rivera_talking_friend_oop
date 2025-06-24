@@ -65,3 +65,6 @@ class TalkingFriendApp:
 
         self.mood_button = ttk.Button(self.action_frame, text="Express Mood", command=self.do_express_mood, state=tk.DISABLED)
         self.mood_button.grid(side=tk.LEFT, padx=2)
+
+        self.special_ability_button = ttk.Button(self.action_frame, text="Special Ability", command=do_special_ability, state=tk.DISABLED)
+        self.special_ability_button.grid(side=tk.LEFT, padx=2)
