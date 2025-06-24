@@ -135,3 +135,7 @@ class TalkingFriendApp:
         '''Handle express mood action'''
         if self.friend:
             self.do_express_mood()
+
+    def do_special_ability(self):
+        if self.friend:
+            self.do_special_ability()
