@@ -28,7 +28,8 @@ class VoiceFriend(ABC):
         pass
 
     @property
-    def moood(self, value):
+    @mood.setter
+    def mood(self, value):
         '''Set the mood with validation.'''
         valid_moods = ["happy", "sad", "excited", "angry", "neutral"]
         if value.lower() in valid_moods:
