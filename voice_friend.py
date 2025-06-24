@@ -9,7 +9,7 @@ class VoiceFriend(ABC):
 
     def __init__(self, name):
         self.name = name
-        self.text_widget = text_widget
+        self.text_widget = text_widget # type: ignore
         self.engine = pyttsx3.init()
         self.setup_voice()
         self._mood - "neutral"
