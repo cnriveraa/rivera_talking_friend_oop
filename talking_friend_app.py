@@ -139,3 +139,7 @@ class TalkingFriendApp:
     def do_special_ability(self):
         if self.friend:
             self.do_special_ability()
+
+    def do_change_mood(self):
+        if self.friend and self.new_mood_var.get():
+            self.friend.change_mood(self.new_mood_var.get())
