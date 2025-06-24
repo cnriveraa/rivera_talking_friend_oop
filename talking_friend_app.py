@@ -143,3 +143,9 @@ class TalkingFriendApp:
     def do_change_mood(self):
         if self.friend and self.new_mood_var.get():
             self.friend.change_mood(self.new_mood_var.get())
+
+    def on_close(self):
+        '''Handle window close'''
+        if self.friend:
+            self.friend.stop()
+        self.root.destrot()
