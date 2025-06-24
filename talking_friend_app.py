@@ -83,3 +83,13 @@ class TalkingFriendApp:
         self.chat_text = scrolledtext.ScrolledText(self.chat_frame, wrap=tk.WORD, width=60, height=20)
         self.chat_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
         self.chat_text.configure(state='disabled')
+
+    def create_friend(self):
+        '''Create new friend instance'''
+        name = self.name_entry.get().strip()
+        if not name:
+            messagebox.showerror("Error.", "Please enter a name for your friend.")
+            return
+        
+        voice_type = self.voice_type.get()
+        initial_mood = self.new_mood_var.get()
