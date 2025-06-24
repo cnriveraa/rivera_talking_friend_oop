@@ -72,3 +72,8 @@ class TalkingFriendApp:
         # Change mood controls
         self.change_mood_frame = ttk.Frame(self.control_frame)
         self.change_mood_frame.grid(row=4, column=0, columnspan=3, pady=(5, 0), sticky=tk.w)
+
+        ttk.Label(self.change_mood_frame, text="Change Mood").pack(side=tk.LEFT)
+        self.new_mood_var = tk.StringVar()
+        self.new_mood_menu = ttk.Combobox(self.change_mood_frame, textvariable=self.new_mood_var, values=moods, state="readonly", width=10)
+        self.new_mood_menu.pack(side=tk.LEFT)
