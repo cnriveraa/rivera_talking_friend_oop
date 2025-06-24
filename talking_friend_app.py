@@ -105,3 +105,10 @@ class TalkingFriendApp:
             self.friend = FemaleVoiceFriend(name, self.chat_text)
 
         self.friend.mood = initial_mood
+
+        # Enable action buttons
+        self.greet_button.config(state=tk.NORMAL)
+        self.joke_button.config(state=tk.NORMAL)
+        self.mood_button.config(state=tk.NORMAL)
+        self.special_ability_button.config(state=tk.NORMAL)
+        self.change_button.config(state=tk.NORMAL)
