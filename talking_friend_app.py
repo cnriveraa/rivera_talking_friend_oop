@@ -97,3 +97,11 @@ class TalkingFriendApp:
         # Clear previous friend if exists
         if self.friend:
             self.friend.stop()
+
+        # Create an appropriate friend type
+        if voice_type == "male":
+            self.friend = MaleVoiceFriend(name, self.chat_text)
+        else:
+            self.friend = FemaleVoiceFriend(name, self.chat_text)
+
+        self.friend.mood = initial_mood
