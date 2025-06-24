@@ -27,3 +27,14 @@ class FemaleVoiceFriend(VoiceFriend):
         # Song: Soda Pop by Saja Boys (from the Netflix K-Animation film "KPop Demon Hunters".)
         song = "You're all I can think of, Every drop I drink up, You're my soda pop, my little soda pop. Cool me down, you're so hot, Pour me up, I won't stop. You're my soda pop, my little soda pop."
         self.say(song + "! ♫")
+
+    def greet(self):
+        '''Override with more enthusiastic female greeting.'''
+        greetings = {
+            "happy": f"Hey sweetie! I'm {self.name}! Nice to meet you.",
+            "sad": f"Oh hello dear... I'm {self.name}. I'm a bit down today.",
+            "excited": f"EEEEKKKK!!! I'm {self.name}. SO HAPPY TO SEE YOUUU!! OMG!!",
+            "angry": f"I'm {self.name}. Ugh! What is it now? I'm not in the mood.",
+            "neutral": f"Hello! I'm {self.name}."
+        }
+        self.say(greetings.get(self.mood, greetings['neutral']))
