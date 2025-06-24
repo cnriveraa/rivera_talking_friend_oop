@@ -93,3 +93,7 @@ class TalkingFriendApp:
         
         voice_type = self.voice_type.get()
         initial_mood = self.new_mood_var.get()
+
+        # Clear previous friend if exists
+        if self.friend:
+            self.friend.stop()
