@@ -1,3 +1,4 @@
+from logging import root
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext
 from male_voice_friend import MaleVoiceFriend
@@ -9,7 +10,7 @@ class TalkingFriendApp:
     def __init__(self):
         self.root = root
         self.root.title = "Talking Friend"
-        self.root geometry('600x500')
+        self.root.geometry('600x500')
         self.root.protocol('WM_DELETE_WINDOW', self.on_close)
 
         self.friend = None
