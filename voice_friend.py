@@ -12,7 +12,7 @@ class VoiceFriend(ABC):
         self.text_widget = text_widget # type: ignore
         self.engine = pyttsx3.init()
         self._setup_voice()
-        self.mood = "neutral" # default mood
+        self._mood = "neutral" # default mood
         self.running = True
         self.message_queue = []
         self.speech_thread = None
@@ -28,6 +28,11 @@ class VoiceFriend(ABC):
         pass
 
     @property
+    def mood(self):
+        '''Get the current mood.'''
+        return self._mood
+
+    @mood.setter
     def mood(self, value):
         '''Set the mood with validation.'''
         valid_moods = ["happy", "sad", "excited", "angry", "neutral"]
