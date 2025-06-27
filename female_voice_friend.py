@@ -40,4 +40,4 @@ class FemaleVoiceFriend(VoiceFriend):
             "angry": f"I'm {self.name}. Ugh! What is it now? I'm not in the mood.",
             "neutral": f"Hello! I'm {self.name}."
         }
-        self.say(greetings.get(self.mood, greetings['neutral']))
+        self.say(greetings.get(self.mood, greetings))
