@@ -34,7 +34,7 @@ class TalkingFriendApp:
         ttk.Label(self.control_frame, text="Friend's Name:").grid(row=0, column=0, sticky=tk.W)
         self.name_entry = ttk.Entry(self.control_frame, width=20)
         self.name_entry.grid(row=0, column=1, sticky=tk.W)
-        self.name_entry.insert(0, "")
+        self.name_entry.insert(0, "Alex") # Default name
 
         # Voice type selection
         ttk.Label(self.control_frame, text="Voice Type:").grid(row=1, column=0, sticky=tk.W)
