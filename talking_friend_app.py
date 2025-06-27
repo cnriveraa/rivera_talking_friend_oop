@@ -6,7 +6,10 @@ from female_voice_friend import FemaleVoiceFriend
 class TalkingFriendApp:
     '''Main application GUI'''
 
-    def __init__(self, root):
+    def __init__(self, root, master):
+        self.master = master
+        self.chat_text = tk.Text(master)
+        self.chat_text.pack()
         self.root = root
         self.root.title("Talking Friend")
         self.root.geometry("600x400")
@@ -26,6 +29,10 @@ class TalkingFriendApp:
 
         # Setup chat display
         self.setup_chat()
+
+    def log(self, message):
+        '''Log message to chat display'''
+        self.chat_text.insert(tk.END, message + "\n")
 
     def setup_controls(self):
         '''Setup control widgets'''
