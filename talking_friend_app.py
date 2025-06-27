@@ -8,8 +8,6 @@ class TalkingFriendApp:
 
     def __init__(self, root, master):
         self.master = master
-        self.chat_text = tk.Text(master)
-        self.chat_text.pack()
         self.root = root
         self.root.title("Talking Friend")
         self.root.geometry("600x400")
@@ -112,9 +110,9 @@ class TalkingFriendApp:
 
         # Create appropriate friend instance
         if voice_type == "male":
-            self.friend = MaleVoiceFriend(name, self.chat_text)
+            self.friend = MaleVoiceFriend(self.chat_text, name)
         else:
-            self.friend = FemaleVoiceFriend(name, self.chat_text)
+            self.friend = FemaleVoiceFriend(self.chat_text, name)
 
         self.friend.mood = initial_mood
 

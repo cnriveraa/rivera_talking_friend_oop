@@ -3,6 +3,9 @@ import random
 
 class FemaleVoiceFriend(VoiceFriend):
     '''Female voice friend implementation.'''
+    def __init__(self, text_widget, name="Zira"):
+        super().__init__(text_widget, name)
+        self._setup_voice()
 
     def _setup_voice(self):
         '''Setup female voice properties.'''

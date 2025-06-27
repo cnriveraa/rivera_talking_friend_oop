@@ -45,14 +45,14 @@ class VoiceFriend(ABC):
         '''Add speech to queue.'''
         self.message_queue.append(text)
         self.log(f"{self.name}: {text}")
-        if not self._speech_thread or not self._speech_thread.is_alive():
-            self._speech_thread = threading.Thread(target=self._process_speech_queue)
-            self._speech_thread.start()
+        if not self.speech_thread or not self.speech_thread.is_alive():
+            self.speech_thread = threading.Thread(target=self._process_speech_queue)
+            self.speech_thread.start()
 
     def _process_speech_queue(self):
         '''Process the speech queue.'''
-        while self._message_queue and self._running:
-            text = self._message_queue.pop(0)
+        while self.message_queue and self.running:
+            text = self.message_queue.pop()
             self.engine.say(text)
             self.engine.runAndWait()
 
