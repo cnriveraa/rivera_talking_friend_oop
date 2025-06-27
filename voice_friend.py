@@ -7,15 +7,15 @@ import threading
 class VoiceFriend(ABC):
     '''Abstract base class representing a voice friend.'''
 
-    def __init__(self, name):
+    def __init__(self, text_widget, name):
         self.name = name
         self.text_widget = text_widget # type: ignore
         self.engine = pyttsx3.init()
-        self.setup_voice()
-        self._mood - "neutral"
-        self._running = True
-        self._message_queue = []
-        self._speech_thread = None
+        self._setup_voice()
+        self.mood = "neutral" # default mood
+        self.running = True
+        self.message_queue = []
+        self.speech_thread = None
 
     def log(self, message):
         '''Add message to the text widget.'''
