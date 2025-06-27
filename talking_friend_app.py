@@ -98,7 +98,7 @@ class TalkingFriendApp:
         name =  self.name_entry.get().strip()
 
         if not name:
-            messagebox.showerror("Error", "Please enter your name for you your")
+            messagebox.showerror("Error", "Please enter your name for your friend.")
             return
         
         voice_type = self.voice_type.get()
